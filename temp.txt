@@ -1,0 +1,8 @@
+url = 'http://en.wikipedia.org/wiki/List_of_Test_cricket_records'
+page = urllib2.urlopen(url)
+soup =  BeautifulSoup(page)
+table = soup.find('table',{'class':'wikitable'})
+tableno = soup.find('table')
+tableone = soup.table.findAll('tr')
+for row in soup.findAll('table')[1].findAll('tr'):
+    print row.text
